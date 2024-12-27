@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bg-default {
+    @apply p-2 hover:rounded-full hover:bg-white hover:bg-opacity-20;
+  }
+  .active-link {
+    @apply bg-zinc-800 bg-opacity-80;
+  }
+  .clip-triangle {
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+  }
+  .clip-partial-eclipse {
+    clip-path: ellipse(34% 33% at 84% 27%);
+  }
+}
+@layer base {
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-button-disabled {
+    @apply h-8 w-8 rounded-full bg-white text-black;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    @apply text-sm font-black;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+div[data-card='body'] > button {
+  display: none;
+}
+
+div[data-card='body']:hover > button {
+  display: block;
+}
